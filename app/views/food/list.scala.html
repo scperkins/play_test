@@ -1,0 +1,25 @@
+@(foods: List[models.Food])
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href='@routes.Assets.at("stylesheets/bootstrap.min.css")'/>
+</head>
+<body>
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Preview</th>
+		</tr>
+		@for(food <- foods) {
+		<tr>
+	      <td><a href="@controllers.routes.Food.show(food.name)">@food.name</a></td>
+	      <td>@food.desc</td> 
+	      <td><img src="@food.thumb"></td>   
+	    </tr>
+	    }
+	</table>
+
+</body>
+</html>

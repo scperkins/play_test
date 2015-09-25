@@ -1,0 +1,6 @@
+GET    /    			@controllers.PlayTest.index
+GET    /products    	@controllers.Products.list
+GET    /products/:uuid	@controllers.Products.show(uuid: String)
+GET    /food    		@controllers.Food.list
+GET    /food/:name		@controllers.Food.show(name: String)
+GET /assets/*file controllers.Assets.at(path="/public", file)

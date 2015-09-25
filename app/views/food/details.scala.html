@@ -1,0 +1,18 @@
+@(food: models.Food)
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href='@routes.Assets.at("stylesheets/bootstrap.min.css")'/>
+</head>
+<body>
+	<div class="container">	
+		<h2>@food.name</h2>
+		<dl>
+			<dt><img src="@food.large"></dt>
+			<dd>@food.desc</dd>
+		</dl>
+	</div>
+	
+</body>
+</html>

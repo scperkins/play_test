@@ -1,0 +1,22 @@
+@(items: List[Item])
+@main(title = "Home") {
+		
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Preview</th>
+
+		</tr>
+		@for(item <- items){
+		<tr>
+			<td>@item.name</td>
+			<td>@item.desc</td>
+			<td><img src="@item.thumb"></td>
+		</tr>
+		}
+	</table>
+</div>
+	
+}

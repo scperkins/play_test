@@ -1,0 +1,25 @@
+@(products: List[Product])
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href='@routes.Assets.at("stylesheets/bootstrap.min.css")'/>
+</head>
+<body>
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Preview</th>
+		</tr>
+		@for(product <- products) {
+		<tr>
+	      <td><a href="@controllers.routes.Products.show(product.uuid)">@product.name</a></td>
+	      <td>@product.desc</td> 
+	      <td><img src="@product.thumb"></td>   
+	    </tr>
+	    }
+	</table>
+
+</body>
+</html>

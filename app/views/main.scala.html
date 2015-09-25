@@ -1,0 +1,32 @@
+@(title: String)(content: Html)
+<!DOCTYPE html>
+<html>
+<head>
+  <title>@title</title>
+  <link rel="stylesheet" href='@routes.Assets.at("stylesheets/bootstrap.min.css")'/>
+</head>
+<body>
+<div class="screenshot">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">MCL Product Browser</a>
+        </div>
+      </div>
+  </nav>
+
+  <div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+      <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+      <li><a href="/food">Food</a></li>
+      <li><a href="/products">Products</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    @content
+  </div>
+</div>
+</body>
+</html>
