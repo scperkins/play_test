@@ -1,12 +1,14 @@
 @(product: Product)
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" href='@routes.Assets.at("stylesheets/bootstrap.min.css")'/>
-</head>
-<body>	
+@main(title = "Product Detail") {
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 	<h2>@product.name</h2>
-	
-</body>
-</html>
+	<dl>
+		<dt>Product Code</dt>
+		<dd>@product.uuid</dd>
+		<dt><img src="@product.large"></dt>
+		<dt>Description</dt>
+		<dd>@product.desc</dd>
+	</dl>
+</div>
+}
