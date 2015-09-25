@@ -25,7 +25,7 @@ case class Product(val name: String, val uuid: String, val desc: String, val pri
 
 object Product {
 	val data = scala.xml.XML.loadFile("conf/data.xml")
-	def getProducts() : List[Product] = {
+	def getProducts : List[Product] = {
 		(data \ "Products" \ "Item").map { product =>
 			Product(
 				(product \ "Name").text, 
@@ -39,6 +39,7 @@ object Product {
 	}
 
 	def findById(uuid: String) = getProducts.find(_.uuid == uuid)
+
 }
 
 case class Item(val name: String, val desc: String, val thumb: String	)
