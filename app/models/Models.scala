@@ -7,7 +7,7 @@ import play.api.Play.current
 case class Food(val name: String, val desc: String, val thumb: String, val large: String) 
 	
 object Food {
-	// val data = scala.xml.XML.loadFile("conf/data.xml")
+	
 	def getFood() : List[Food] = {
 		(Global.xmlData \ "Food" \ "Item").map { food =>
 			Food(
@@ -25,7 +25,7 @@ object Food {
 case class Product(val name: String, val uuid: String, val desc: String, val price: Double, val thumb: String, val large: String)
 
 object Product {
-	//val data = scala.xml.XML.loadFile("conf/data.xml")
+	
 	def getProducts : List[Product] = {
 		(Global.xmlData \ "Products" \ "Item").map { product =>
 			Product(
@@ -46,7 +46,7 @@ object Product {
 case class Item(val name: String, val desc: String, val thumb: String	)
 
 object Item {
-	//val data = scala.xml.XML.loadFile("conf/data.xml")
+	
 	def getItems() : List[Item] = {
 		(Global.xmlData \\ "Item").map { item =>
 			Item(
