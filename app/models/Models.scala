@@ -1,14 +1,15 @@
 package models 
 
+import global.Global
 import play.api._
 import play.api.Play.current
 
 case class Food(val name: String, val desc: String, val thumb: String, val large: String) 
 	
 object Food {
-	val data = scala.xml.XML.loadFile("conf/data.xml")
+	// val data = scala.xml.XML.loadFile("conf/data.xml")
 	def getFood() : List[Food] = {
-		(data \ "Food" \ "Item").map { food =>
+		(Global.xmlData \ "Food" \ "Item").map { food =>
 			Food(
 				(food \ "Name").text, 
 				(food \ "Description").text,
@@ -24,9 +25,9 @@ object Food {
 case class Product(val name: String, val uuid: String, val desc: String, val price: Double, val thumb: String, val large: String)
 
 object Product {
-	val data = scala.xml.XML.loadFile("conf/data.xml")
+	//val data = scala.xml.XML.loadFile("conf/data.xml")
 	def getProducts : List[Product] = {
-		(data \ "Products" \ "Item").map { product =>
+		(Global.xmlData \ "Products" \ "Item").map { product =>
 			Product(
 				(product \ "Name").text, 
 				(product \ "UUID").text,
@@ -45,9 +46,9 @@ object Product {
 case class Item(val name: String, val desc: String, val thumb: String	)
 
 object Item {
-	val data = scala.xml.XML.loadFile("conf/data.xml")
+	//val data = scala.xml.XML.loadFile("conf/data.xml")
 	def getItems() : List[Item] = {
-		(data \\ "Item").map { item =>
+		(Global.xmlData \\ "Item").map { item =>
 			Item(
 				(item \ "Name").text, 
 				(item \ "Description").text,
